@@ -186,8 +186,12 @@ def create_image_bytes(lottery_type: str) -> bytes:
     # ชื่อประเภทหวย (auto-fit)
     font_auto = _get_auto_font(draw, lottery_type, image.width - 400, start=70, font_path=text_font_path)
     bbox = draw.textbbox((0, 0), lottery_type, font=font_auto)
-    x_pos = (image.width - (bbox[2] - bbox[0])) // 2
-    _bold_text(draw, (x_pos + 80, 40), lottery_type, font_auto, fill="#000000")
+    text_width = bbox[2] - bbox[0] # คำนวณความกว้างของตัวอักษร
+    x_pos = (image.width - text_width) // 2
+    
+    # ตำแหน่งแกน X เริ่มต้นของข้อความ (ตามโค้ดเดิมของคุณคือ x_pos + 80)
+    text_start_x = x_pos + 80
+    _bold_text(draw, (text_start_x, 40), lottery_type, font_auto, fill="#000000")
 
     flag_path = FLAG_MAPPING.get(lottery_type)
     if flag_path:
@@ -195,18 +199,21 @@ def create_image_bytes(lottery_type: str) -> bytes:
             # โหลดรูปธง
             flag_img = Image.open(flag_path).convert("RGBA")
             
-            # 1. กำหนดขนาดธง (ปรับความกว้าง ตัวแปรความสูงจะปรับตามสัดส่วนอัตโนมัติ)
+            # 1. กำหนดขนาดธง
             target_flag_width = 80   # ⬅️ ปรับขนาดความกว้างของธงที่นี่
             w_ratio = target_flag_width / flag_img.width
             target_flag_height = int(flag_img.height * w_ratio)
             flag_img = flag_img.resize((target_flag_width, target_flag_height), Image.Resampling.LANCZOS)
             
-            # 2. กำหนดตำแหน่งที่วางธงอิสระ
-            flag_x = 700  # ⬅️ ปรับแกน X (เลื่อนซ้าย-ขวา)
-            flag_y = 45  # ⬅️ ปรับแกน Y (เลื่อนขึ้น-ลง)
+            # 2. กำหนดตำแหน่งที่วางธงให้ต่อท้ายชื่อหวย
+            spacing = 20 # ⬅️ ปรับระยะห่างระหว่างตัวอักษรกับธงได้ที่นี่
+            
+            # คำนวณแกน X: เอาจุดเริ่มต้นข้อความ + ความกว้างข้อความ + ระยะห่าง
+            flag_x = text_start_x + text_width + spacing 
+            flag_y = 45  # ⬅️ แกน Y ยึดตามเดิม (ปรับขึ้นลงให้ตรงกับข้อความได้)
             
             # วางรูปธงทับลงไป
-            image.paste(flag_img, (flag_x, flag_y), flag_img)
+            image.paste(flag_img, (int(flag_x), int(flag_y)), flag_img)
             
         except FileNotFoundError:
             pass # ถ้าหาไฟล์รูปธงไม่เจอ ให้ข้ามการวาดธงไปเลย

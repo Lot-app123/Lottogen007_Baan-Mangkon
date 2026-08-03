@@ -70,6 +70,7 @@ FLAG_MAPPING = {
     "ฮานอยดึก": "static/flags/vietnam.png",
     "หวยฮานอย": "static/flags/vietnam.png",
     "ฮานอย VIP": "static/flags/vietnam.png",
+    "ฮานอย + VIP": "static/flags/vietnam.png",
     "หวยฮานอย VIP": "static/flags/vietnam.png",
     "ฮานอยพัฒนา": "static/flags/vietnam.png",
     "ฮานอย EXTRA": "static/flags/vietnam.png",
@@ -84,6 +85,8 @@ FLAG_MAPPING = {
     "นิเคอิบ่าย": "static/flags/japan.png",
     "นิเคอิ(บ่าย) VIP": "static/flags/japan.png",
     "นิเคอิบ่าย VIP": "static/flags/japan.png",
+    "นิเคอิ(เช้า) + VIP": "static/flags/japan.png",
+    "นิเคอิ(บ่าย) + VIP": "static/flags/japan.png",
 
     # 🇨🇳 จีน (China)
     "จีน(เช้า)": "static/flags/china.png",
@@ -94,6 +97,8 @@ FLAG_MAPPING = {
     "จีนบ่าย": "static/flags/china.png",
     "จีน(บ่าย) VIP": "static/flags/china.png",
     "จีนบ่าย VIP": "static/flags/china.png",
+    "จีน(เช้า) + VIP": "static/flags/china.png",
+    "จีน(บ่าย) + VIP": "static/flags/china.png",
 
     # 🇭🇰 ฮ่องกง (Hong Kong)
     "ฮั่งเส็ง(เช้า)": "static/flags/hongkong.png",
@@ -104,18 +109,23 @@ FLAG_MAPPING = {
     "ฮั่งเส็งบ่าย": "static/flags/hongkong.png",
     "ฮั่งเส็ง(บ่าย) VIP": "static/flags/hongkong.png",
     "ฮั่งเส็งบ่าย VIP": "static/flags/hongkong.png",
+    "ฮั่งเส็ง(เช้า) + VIP": "static/flags/hongkong.png",
+    "ฮั่งเส็ง(บ่าย) + VIP": "static/flags/hongkong.png",
 
     # 🇹🇼 ไต้หวัน (Taiwan)
     "ไต้หวัน": "static/flags/taiwan.png",
     "ไต้หวัน VIP": "static/flags/taiwan.png",
+    "ไต้หวัน + VIP": "static/flags/taiwan.png",
 
     # 🇰🇷 เกาหลีใต้ (South Korea)
     "เกาหลี": "static/flags/korea.png",
     "เกาหลี VIP": "static/flags/korea.png",
+    "เกาหลี + VIP": "static/flags/korea.png",
 
     # 🇺🇸 สหรัฐอเมริกา (USA)
     "ดาวโจนส์": "static/flags/usa.png",
     "ดาวโจนส์ VIP": "static/flags/usa.png",
+    "ดาวโจนส์ + VIP": "static/flags/usa.png",
     "หวยดาวโจนส์ VIP": "static/flags/usa.png",
     "ดาวโจนส์ STAR": "static/flags/usa.png",
     "หวยดาวโจนส์ STAR": "static/flags/usa.png",
@@ -123,18 +133,22 @@ FLAG_MAPPING = {
     # 🇬🇧 อังกฤษ (United Kingdom)
     "อังกฤษ": "static/flags/uk.png",
     "อังกฤษ VIP": "static/flags/uk.png",
+    "อังกฤษ + VIP": "static/flags/uk.png",
 
     # 🇩🇪 เยอรมนี (Germany)
     "เยอรมัน": "static/flags/germany.png",
     "เยอรมัน VIP": "static/flags/germany.png",
+    "เยอรมัน + VIP": "static/flags/germany.png",
 
     # 🇷🇺 รัสเซีย (Russia)
     "รัสเซีย": "static/flags/russia.png",
     "รัสเซีย VIP": "static/flags/russia.png",
+    "รัสเซีย + VIP": "static/flags/russia.png",
 
     # 🇸🇬 สิงคโปร์ (Singapore)
     "สิงคโปร์": "static/flags/singapore.png",
     "สิงคโปร์ VIP": "static/flags/singapore.png",
+    "สิงคโปร์ + VIP": "static/flags/singapore.png",
 
     # 🇹🇭 ไทย (Thailand)
     "ไทยเช้า": "static/flags/thailand.png",
